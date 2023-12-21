@@ -4,11 +4,11 @@ import random
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
 SPEED = 100
-SPACE_SIZE = 50
+SPACE_SIZE = 25
 BODY_PARTS = 3
 SNAKE_COLOR = "#00FF00"
 FOOD_COLOR = "#FF0000"
-BACKGROUND_COLOR = "#FFFFFF"
+BACKGROUND_COLOR = "#000000"
 
 class Snake:
     
@@ -55,9 +55,6 @@ def next_turn(snake, food):
     square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR)
 
     snake.squares.insert(0, square)
-
-    print(f"x = {x}, y = {y}; food x = {food.coordinates[0]}, food y = {food.coordinates[1]}")
-
 
     if (x == food.coordinates[0]) and (y == food.coordinates[1]):
 
